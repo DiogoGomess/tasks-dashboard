@@ -40,7 +40,7 @@ type ModalProps = {
 
 export function EditTask({ isOpen, onClose, task }: ModalProps) {
     const queryClient = useQueryClient();
-    const [selectedPriority, setSelectedPriority] = useState(task.priority);
+    const [_, setSelectedPriority] = useState(task.priority);
     const { register, handleSubmit, reset } = useForm<CreateTaskSchema>();
 
     const { mutateAsync } = useMutation({
